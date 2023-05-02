@@ -1,0 +1,18 @@
+.background{
+    background-image: url('../../../public/food back/greek-food-background-traditional-different-greek-dishes-set-greek-food-background-traditional-different-greek-dishes-set-top-view-178761927.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    font-size: 70px;
+}
+
+@media screen and (max-width:776px) {
+
+    h1{
+        font-size: 36px;
+        margin-top: 10px;
+    }
+    
+}

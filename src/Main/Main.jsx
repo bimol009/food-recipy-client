@@ -1,3 +1,6 @@
+import BannerSection from "./Banner/BannerSection";
+import CaroselSection from "./carusel/CaroselSection";
+import Footer from "./Footer/Footer";
 import Header from "../Page/Shared/Header/Header";
 import Login from "../Page/Login/Login/Login";
 import React from "react";
@@ -8,22 +11,23 @@ const Main = () => {
     <div>
       <Header></Header>
 
-      <Container>
+      <div className="p-4">
 
       
         <Row>
-          <Col lg={3}>
-        <h2>lili</h2>
+          <Col lg={12}>
+        <CaroselSection/>
           </Col>
-          <Col lg={6}>
-            <h2>bimol</h2>
-          </Col>
-          <Col lg={3}>
-    
-          </Col>
+         
         </Row>
-      </Container>
-      {/* <Footer></Footer> */}
+        <Row>
+          <Col lg={12}>
+        <BannerSection/>
+          </Col>
+         
+        </Row>
+      </div >
+       <Footer></Footer> 
     </div>
   );
 };

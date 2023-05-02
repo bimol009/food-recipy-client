@@ -18,17 +18,26 @@ const Header = () => {
   };
 
   return (
-    <Container>
+    <Container className="p-4">
       <Navbar expand="lg">
         <Container>
-          <Link to="/">User Name</Link>
+          <Link className="fw-bold fs-1 text-white rounded p-2 bg-danger text-decoration-none" to="/">
+            CHEF COOKING
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mx-auto">
-              <Link to="/home">Home</Link>
-              <Link to="/blog">Blog</Link>
-            
+            <Nav
+              variant="tabs"
+              className="mx-auto"
+            >
+              <Link className="text-decoration-none text-danger fs-3 fw-bolder" to="/">
+                Home
+              </Link>
+              <Link className="text-decoration-none text-danger fs-3 fw-bolder ms-3" to="/blog">
+                Blog
+              </Link>
             </Nav>
+            
 
             <Nav className="profile-login">
               {user && (
@@ -37,12 +46,12 @@ const Header = () => {
               {user && <p>{user.email}</p>}
 
               {user ? (
-                <Button onClick={handleLogOut} variant="dark">
+                <Button className="fs-3 fw-bold" onClick={handleLogOut} variant="dark">
                   LogOut
                 </Button>
               ) : (
                 <Link to="/login">
-                  <Button variant="dark">Login</Button>
+                  <Button className="fs-3 fw-bold" variant="dark">Login</Button>
                 </Link>
               )}
             </Nav>

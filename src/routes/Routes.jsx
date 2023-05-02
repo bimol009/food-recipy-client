@@ -1,3 +1,4 @@
+import Footer from "../Main/Footer/Footer";
 import Login from "../Page/Login/Login/Login";
 import LoginLayout from "../Page/Login/LoginLayout/LoginLayout";
 import Main from "../Main/Main";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/terms",
         element: <Terms></Terms>,
+      },
+      {
+        path: "/footer",
+        element: <Footer></Footer>
       },
     ],
   },
