@@ -1,0 +1,10 @@
+.separate {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width:580px) {
+  .separate {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,3 +1,4 @@
+import "./Login.css";
 import React, { useContext, useRef, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -8,7 +9,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const { forgotPass, signIn } = useContext(AuthContext);
+  const { forgotPass, signIn, googleSignEmailPass } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const emailRef = useRef();
@@ -41,7 +42,6 @@ const Login = () => {
       .catch((error) => {
         setError(error.message);
       });
-    
   };
 
   const passwordReset = () => {
@@ -55,6 +55,21 @@ const Login = () => {
         alert("please recheck");
       })
       .catch((error) => console.log(error));
+  };
+
+  const googleSign = () => {
+    googleSignEmailPass()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setSuccess("SuccessFully Logged in");
   };
 
   return (
@@ -115,6 +130,19 @@ const Login = () => {
             Register
           </Link>
         </h5>
+
+
+        <div onClick={googleSign} className="btn-control">
+          <div className="display">
+            <img
+              className="google-img"
+              src="https://i.ibb.co/0VYz0t4/download.png"
+              alt=""
+            />
+
+            <p>Continue with google</p>
+          </div>
+        </div>
       </Form>
     </Container>
   );

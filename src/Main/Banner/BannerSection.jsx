@@ -8,10 +8,10 @@ const BannerSection = () => {
       <Container>
         <Row>
           <Col className="d-flex align-items-center" lg={6}>
-            <img src={logo} alt="" />
+            <img className="img-inside" src={logo} alt="" />
           </Col>
           <Col className="d-flex align-items-center font" lg={6}>
-            <h1 className="text-danger fw-bold">
+            <h1 className="  fw-bold">
               CHEF COOKING <br /> <br /> Browse Throw Over <br /> 3000000
               Recipes
             </h1>

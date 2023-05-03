@@ -1,0 +1,17 @@
+    .display {
+        display: flex;
+        align-items: center;
+        border: 2px solid #ddd;
+        cursor: pointer;
+        justify-content: center;
+    }
+
+    .google-img{
+        height: 41px;
+        width: 41px;
+    }
+
+    .display p {
+        margin-top: 12px;
+        margin-bottom: 1rem;
+    }

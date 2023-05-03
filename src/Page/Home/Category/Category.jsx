@@ -1,21 +1,25 @@
-import NewsCard from "../NewsCard/NewsCard";
-import React from "react";
+import Card from "../../Shared/Card/Card";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const Category = () => {
 
-    const {id}=useParams();
+   
 
-    const categoryNewsLoad = useLoaderData();
+    // const {id}=useParams();
+
+    // const categoryRecipesLoad = useLoaderData();
+
+    // console.log(categoryRecipesLoad)
 
     return (
         <div>
-            {id && <h2> category : {categoryNewsLoad.length}</h2>}
+            {/* {id && <h2> category : {categoryRecipesLoad.length}</h2>}
             {
-                categoryNewsLoad.map(news=><NewsCard key={news._id} news={news}></NewsCard>)
-            }
+                categoryRecipesLoad.map(recipes=><Card key={recipes._id} recipes={recipes}></Card>)
+            } */}
         </div>
     );
 };
 
-export default Category;<h2>thi is category</h2>
+export default Category;

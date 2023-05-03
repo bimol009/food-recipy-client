@@ -12,7 +12,7 @@ const CaroselSection = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={banner3}
+          src="https://i.ibb.co/kJ0DgZ6/spicy-minced-pork-salad-with-chili-flakes-1150-28576.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -23,7 +23,7 @@ const CaroselSection = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={banner1}
+          src="https://i.ibb.co/87hHsBP/top-view-delicious-noodles-concept-23-2148773775.jpg"
           alt="Second slide"
         />
 
@@ -35,7 +35,7 @@ const CaroselSection = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={banner2}
+          src="https://i.ibb.co/r2FwS5F/whole-chicken-grill-served-with-rice-garnish-white-plate-114579-873.jpg"
           alt="Third slide"
         />
 

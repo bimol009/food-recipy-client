@@ -1,11 +1,13 @@
 .background{
-    background-image: url('../../../public/food back/greek-food-background-traditional-different-greek-dishes-set-greek-food-background-traditional-different-greek-dishes-set-top-view-178761927.jpg');
+    /* background-image: url('https://i.ibb.co/fdG0xBK/papaya-salad-served-dining-table-green-papaya-salad-spicy-thai-food-plate-with-fresh-vegetables-7352.jpg'); */
+    background-image: url('https://i.ibb.co/jL1j4Pv/spicy-minced-pork-rice-black-plate-1150-23729.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 h1{
     font-size: 70px;
+    color:rgb(61, 41, 10);
 }
 
 @media screen and (max-width:776px) {
@@ -13,6 +15,17 @@ h1{
     h1{
         font-size: 36px;
         margin-top: 10px;
+        color: beige;
+    }
+
+    .background img{
+        
+       
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+       
     }
     
 }

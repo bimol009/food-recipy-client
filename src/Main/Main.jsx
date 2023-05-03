@@ -1,5 +1,9 @@
 import BannerSection from "./Banner/BannerSection";
+import Card from "../Page/Shared/Card/Card";
+import CardLoad from "../Page/Shared/CardRecipe/CardLoad";
+import CardRecipe from "../Page/Shared/CardRecipe/CardRecipe";
 import CaroselSection from "./carusel/CaroselSection";
+import Category from "../Page/Home/Category/Category";
 import Footer from "./Footer/Footer";
 import Header from "../Page/Shared/Header/Header";
 import Login from "../Page/Login/Login/Login";
@@ -23,6 +27,12 @@ const Main = () => {
         <Row>
           <Col lg={12}>
         <BannerSection/>
+          </Col>
+         
+        </Row>
+        <Row>
+          <Col lg={12}>
+        <CardRecipe/>
           </Col>
          
         </Row>

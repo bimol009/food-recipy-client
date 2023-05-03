@@ -5,6 +5,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log("important password ",import.meta.env.VITE_apiKey)
 const firebaseConfig = {
   apiKey: "AIzaSyA3vKJf5Thuido0h2sfwdkOkt0WoCThffg",
   authDomain: "food-recipe-assign.firebaseapp.com",

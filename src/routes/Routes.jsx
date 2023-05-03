@@ -1,3 +1,4 @@
+import Category from "../Page/Home/Category/Category";
 import Footer from "../Main/Footer/Footer";
 import Login from "../Page/Login/Login/Login";
 import LoginLayout from "../Page/Login/LoginLayout/LoginLayout";
@@ -34,6 +35,18 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "category",
+    element: <Main></Main>,
+    children: [
+      {
+        path: ":id",
+        element: <Category></Category>,
+        loader: ({ params }) =>
+          fetch(`https://dragon-server-bimol009.vercel.app/categories/${params.id}`),
+      },
+    ],
+  }
 ]);
 
 export default router;

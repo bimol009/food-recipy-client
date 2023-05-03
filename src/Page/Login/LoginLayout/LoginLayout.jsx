@@ -8,6 +8,7 @@ const LoginLayout = () => {
             <Header></Header>
             <Outlet></Outlet>
             <footer></footer>
+            
         </div>
     );
 };

@@ -1,13 +1,15 @@
 import React, { useContext, useRef, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
   const [show, setShow] = useState(false);
   const [accepted, setAccepted] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const { createUserEmailPass, showEmailVerification, user } =
+  const { createUserEmailPass, showEmailVerification,googleSignEmailPass, user } =
     useContext(AuthContext);
   const emailRef = useRef("");
 
@@ -38,6 +40,21 @@ const Register = () => {
 
   const acceptHandle = (e) => {
     setAccepted(e.target.checked);
+  };
+
+  const googleSign = () => {
+    googleSignEmailPass()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setSuccess("SuccessFully Logged in");
   };
 
   return (
@@ -120,6 +137,18 @@ const Register = () => {
             Login
           </Link>
         </h5>
+
+           <div onClick={googleSign} className="btn-control">
+          <div className="display">
+            <img
+              className="google-img"
+              src="https://i.ibb.co/0VYz0t4/download.png"
+              alt=""
+            />
+
+            <p>Continue with google</p>
+          </div>
+        </div>
       </Form>
     </Container>
   );
