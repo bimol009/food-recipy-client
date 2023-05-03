@@ -9,7 +9,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const { forgotPass, signIn, googleSignEmailPass } = useContext(AuthContext);
+  const { forgotPass, signIn, googleSignEmailPass,gitHubProviderEmailPass } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const emailRef = useRef();
@@ -71,9 +71,23 @@ const Login = () => {
 
     setSuccess("SuccessFully Logged in");
   };
+  const githubSign = () => {
+    gitHubProviderEmailPass()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setSuccess("SuccessFully Logged in");
+  };
 
   return (
-    <Container className="w-100 mx-auto">
+    <Container className="w-100 mx-auto mb-5">
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -132,7 +146,7 @@ const Login = () => {
         </h5>
 
 
-        <div onClick={googleSign} className="btn-control">
+        <div onClick={googleSign} className="btn-control mt-5">
           <div className="display">
             <img
               className="google-img"
@@ -143,6 +157,18 @@ const Login = () => {
             <p>Continue with google</p>
           </div>
         </div>
+
+        <div onClick={githubSign} className="btn-control mt-5">
+                  <div className="display">
+                    <img
+                      className="google-img"
+                      src="https://i.ibb.co/TWkR133/download-1-removebg-preview.png"
+                      alt=""
+                    />
+
+                    <p>Continue with GitHub</p>
+                  </div>
+                </div>
       </Form>
     </Container>
   );

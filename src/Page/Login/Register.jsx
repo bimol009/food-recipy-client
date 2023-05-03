@@ -9,8 +9,13 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const { createUserEmailPass, showEmailVerification,googleSignEmailPass, user } =
-    useContext(AuthContext);
+  const {
+    createUserEmailPass,
+    showEmailVerification,
+    googleSignEmailPass,
+    gitHubProviderEmailPass,
+    user,
+  } = useContext(AuthContext);
   const emailRef = useRef("");
 
   const handleRegister = (e) => {
@@ -47,7 +52,20 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setSuccess("SuccessFully Logged in");
+  };
+  const githubSign = () => {
+    gitHubProviderEmailPass()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
       })
 
       .catch((error) => {
@@ -58,7 +76,7 @@ const Register = () => {
   };
 
   return (
-    <Container className="w-100 mx-auto">
+    <Container className="w-100 mx-auto mb-5 pb-5 mt-5">
       <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Label>Name</Form.Label>
@@ -138,7 +156,7 @@ const Register = () => {
           </Link>
         </h5>
 
-           <div onClick={googleSign} className="btn-control">
+        <div onClick={googleSign} className="btn-control mt-5">
           <div className="display">
             <img
               className="google-img"
@@ -147,6 +165,18 @@ const Register = () => {
             />
 
             <p>Continue with google</p>
+          </div>
+        </div>
+
+        <div onClick={githubSign} className="btn-control mt-5">
+          <div className="display">
+            <img
+              className="google-img"
+              src="https://i.ibb.co/TWkR133/download-1-removebg-preview.png"
+              alt=""
+            />
+
+            <p>Continue with GitHub</p>
           </div>
         </div>
       </Form>
