@@ -44,7 +44,7 @@ const Category = () => {
     <div>
       <BannerCategory></BannerCategory>
 
-      <h1 className="text-center text-info">Chef Description</h1>
+      <h1 className="text-center text-info fw-bold">Chef Description</h1>
 
       <Card className="bg-dark text-white mt-5 mb-5">
         <Card.Img src={chef_picture} alt="Card image" />
@@ -86,32 +86,38 @@ const Category = () => {
         </Card.Footer>
       </Card>
 
+      <h1 className="text-center text-info fw-bold">Chef <span className="text-warning">Card</span></h1>
+
       <div className="display">
         <Row>
           <Col lg={4}>
-            <Card style={{ width: "25rem" }}>
+            <Card >
               <Card.Img variant="top" src={recipe_pic?.first} />
               <Card.Body>
-                <Card.Title>{recipe_pic?.recipe_pic_name}</Card.Title>
+                <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name}</Card.Title>
               </Card.Body>
+              <button className="text-danger p-3 fs-4 fw-bolder bg-info">ADD TO FAVORITE</button>
             </Card>
           </Col>
 
           <Col lg={4}>
-            <Card style={{ width: "25rem" }}>
+            <Card >
               <Card.Img variant="top" src={recipe_pic?.second} />
               <Card.Body>
-                <Card.Title>{recipe_pic?.recipe_pic_name1}</Card.Title>
+                <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name1}</Card.Title>
+               
               </Card.Body>
+              <button className="text-danger p-3 fs-4 fw-bolder bg-info">ADD TO FAVORITE</button>
             </Card>
           </Col>
 
           <Col lg={4}>
-            <Card style={{ width: "25rem" }}>
+            <Card >
               <Card.Img variant="top" src={recipe_pic?.third} />
               <Card.Body>
-                <Card.Title>{recipe_pic?.recipe_pic_name2}</Card.Title>
+                <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name2}</Card.Title>
               </Card.Body>
+              <button className="text-danger p-3 fs-4 fw-bolder bg-info">ADD TO FAVORITE</button>
             </Card>
           </Col>
         </Row>
