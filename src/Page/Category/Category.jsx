@@ -5,6 +5,9 @@ import { Rating } from "@smastrom/react-rating";
 import { useEffect, useState } from "react";
 import { Card, Col, ListGroup, Row, Toast } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Category = () => {
   const { id } = useParams();
@@ -16,7 +19,7 @@ const Category = () => {
   // console.log(categoryRecipesLoad)
 
   const [categories, setCategories] = useState([]);
-  const [favorite,SetFavorite] = useState([]);
+  const [favorite,SetFavorite] = useState(false);
 
 
 
@@ -31,7 +34,7 @@ const Category = () => {
 
 
   const handleFav = ()=>{
-    Toast('Added To Favorites !')
+    toast('Added To Favorites !')
     SetFavorite(true)
   }
 
@@ -108,6 +111,7 @@ const Category = () => {
                 <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name}</Card.Title>
               </Card.Body>
               <button onClick={handleFav} className="text-danger p-3 fs-4 fw-bolder bg-info"disabled={favorite}>ADD TO FAVORITE</button>
+              <ToastContainer></ToastContainer>
             </Card>
           </Col>
 
