@@ -31,20 +31,7 @@ const Card = () => {
           <ListGroup.Item>Years of experience :{experience}</ListGroup.Item>
           <ListGroup.Item>Likes : {likes}</ListGroup.Item>
         </ListGroup>
-        <Card.Footer className="text-muted">
-          <div className="d-flex icon-sec align-items-center">
-            {/* <Rating
-              style={{ maxWidth: 90 }}
-            //   value={Math.round(rating?.number || 0)}
-              readOnly
-            /> */}
-            <div className="flex-grow-1 ms-1">
-              {/* <span>{rating?.number}</span> */}
-              he
-            </div>
-            <div>{/* <FaEye></FaEye> {total_view} */}</div>
-          </div>
-        </Card.Footer>
+      
       </Card>
     </div>
   );

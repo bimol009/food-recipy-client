@@ -7,11 +7,11 @@ const BannerSection = () => {
   return (
     <div className="background mt-5">
       <h2 className="text-center pt-5 fw-bold text-warning">
-        {" "}
+     
         Choose any chefs
       </h2>
       <p className="text-center text-warning fs-4 pb-5">
-        {" "}
+   
         Some quick example text to build on the card title and make up the bulk
         of the card's content.
       </p>
@@ -23,7 +23,7 @@ const BannerSection = () => {
               <LazyLoadImage src={logo} alt="Image Alt" />
             </div>
           </Col>
-          <Col className="d-flex align-items-center font" lg={6}>
+          <Col className="d-flex align-items-center" lg={6}>
             <h1 className="  fw-bold">
               CHEF COOKING <br /> <br /> Browse Throw Over <br /> 3000000
               Recipes
