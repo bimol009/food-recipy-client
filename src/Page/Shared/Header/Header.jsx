@@ -73,9 +73,9 @@ const Header = () => {
               >
                 <Link
                   className="text-decoration-none text-info fs-3 fw-bolder ms-3"
-                  to="/"
+                  to="/chef"
                 >
-                  Contact
+                  Chef
                 </Link>
               </NavLink>
               <NavLink

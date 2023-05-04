@@ -3,7 +3,7 @@ import "./Category.css";
 import BannerCategory from "../../Main/Banner/BannerCategory";
 import { Rating } from "@smastrom/react-rating";
 import { useEffect, useState } from "react";
-import { Card, Col, ListGroup, Row } from "react-bootstrap";
+import { Card, Col, ListGroup, Row, Toast } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const Category = () => {
@@ -16,6 +16,9 @@ const Category = () => {
   // console.log(categoryRecipesLoad)
 
   const [categories, setCategories] = useState([]);
+  const [favorite,SetFavorite] = useState([]);
+
+
 
   useEffect(() => {
     fetch(`https://food-recipe-server-bimol009.vercel.app/categories/${id}`)
@@ -25,6 +28,12 @@ const Category = () => {
 
       .catch((error) => console.log(error));
   }, []);
+
+
+  const handleFav = ()=>{
+    Toast('Added To Favorites !')
+    SetFavorite(true)
+  }
 
   const {
     title,
@@ -44,28 +53,29 @@ const Category = () => {
     <div>
       <BannerCategory></BannerCategory>
 
-      <h1 className="text-center text-info fw-bold">Chef Description</h1>
+      <h1 className="text-center text-info fw-bold">Chef <span className="text-warning">Description</span></h1>
+      <p className="text-center text-info fw-bold fs-3 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br /> Officiis odio nesciunt nostrum expedita suscipit ad!</p>
 
       <Card className="bg-dark text-white mt-5 mb-5">
         <Card.Img src={chef_picture} alt="Card image" />
         <Card.ImgOverlay>
           <Card.Title className="fs-1 fw-bold text-warning">
-            {chef_name}
+          <span className="text-white fw-bold">Name:</span>  {chef_name}
           </Card.Title>
           <Card.Text>
-            <p className="fs-4 text-danger text-show">{details}</p>
+            <p className="fs-4 text-danger text-show"><span className="text-white fw-bold">Details:</span> {details}</p>
           </Card.Text>
           <ListGroup className="text-white">
             <h5 className="fw-bold fs-2 text-danger">
-              Chef Name : {chef_name}
+            <span className="text-white fw-bold">Name:</span> {chef_name}
             </h5>
             <h5 className="fw-bold fs-2 text-danger">
-              Numbers of recipes :{no_of_recipe}
+            <span className="text-white fw-bold"> Numbers of recipes :</span> {no_of_recipe}
             </h5>
             <h5 className="fw-bold fs-2 text-danger">
-              Years of experience :{experience}
+            <span className="text-white fw-bold">Years of experience :</span>{experience}
             </h5>
-            <h5 className="fw-bold fs-2 text-danger">Likes : {likes}</h5>
+            <h5 className="fw-bold fs-2 text-danger"><span className="text-white fw-bold">Likes :</span> {likes}</h5>
           </ListGroup>
           <Card.Text>Last updated 3 mins ago</Card.Text>
         </Card.ImgOverlay>
@@ -87,6 +97,7 @@ const Category = () => {
       </Card>
 
       <h1 className="text-center text-info fw-bold">Chef <span className="text-warning">Card</span></h1>
+      <p className="text-center text-info fw-bold fs-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br /> Officiis odio nesciunt nostrum expedita suscipit ad!</p>
 
       <div className="display">
         <Row>
@@ -96,7 +107,7 @@ const Category = () => {
               <Card.Body>
                 <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name}</Card.Title>
               </Card.Body>
-              <button className="text-danger p-3 fs-4 fw-bolder bg-info">ADD TO FAVORITE</button>
+              <button onClick={handleFav} className="text-danger p-3 fs-4 fw-bolder bg-info"disabled={favorite}>ADD TO FAVORITE</button>
             </Card>
           </Col>
 
@@ -107,7 +118,7 @@ const Category = () => {
                 <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name1}</Card.Title>
                
               </Card.Body>
-              <button className="text-danger p-3 fs-4 fw-bolder bg-info">ADD TO FAVORITE</button>
+              <button onClick={handleFav} className="text-danger p-3 fs-4 fw-bolder bg-info" disabled={favorite}>ADD TO FAVORITE</button>
             </Card>
           </Col>
 
@@ -117,7 +128,7 @@ const Category = () => {
               <Card.Body>
                 <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name2}</Card.Title>
               </Card.Body>
-              <button className="text-danger p-3 fs-4 fw-bolder bg-info">ADD TO FAVORITE</button>
+              <button onClick={handleFav} className="text-danger p-3 fs-4 fw-bolder bg-info"disabled={favorite}>ADD TO FAVORITE</button>
             </Card>
           </Col>
         </Row>

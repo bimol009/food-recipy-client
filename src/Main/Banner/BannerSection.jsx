@@ -25,8 +25,8 @@ const BannerSection = () => {
           </Col>
           <Col className="d-flex align-items-center" lg={6}>
             <h1 className="  fw-bold">
-              CHEF COOKING <br /> <br /> Browse Throw Over <br /> 3000000
-              Recipes
+              CHEF COOKING <br /> <span className="text-warning"> <br /> Browse Throw Over <br /> 3000000
+              Recipes</span>
             </h1>
           </Col>
         </Row>

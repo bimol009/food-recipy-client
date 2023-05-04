@@ -1,3 +1,4 @@
+import CardRecipe from "../Page/Shared/CardRecipe/CardRecipe";
 import Category from "../Page/Category/Category";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import FoodLayout from "../Main/FoodLayout/FoodLayout";
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/chef",
+        element: <CardRecipe></CardRecipe>,
       },
       {
         path: "/register",
