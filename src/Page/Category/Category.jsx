@@ -32,7 +32,8 @@ const Category = () => {
     no_of_recipe,
     experience,
     likes,
-    details
+    details,
+    recipe_pic
   } = categories;
 
   console.log(categories);
@@ -89,23 +90,12 @@ const Category = () => {
       <Row>
           <Col lg={4}>
           <Card style={{ width: '25rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+      <Card.Img variant="top" src={recipe_pic?.first}/>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title>{recipe_pic?.recipe_pic_name}</Card.Title>
+        
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
+   
     </Card>
           </Col>
          
@@ -113,23 +103,12 @@ const Category = () => {
         <Row>
           <Col lg={4}>
           <Card style={{ width: '25rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+      <Card.Img variant="top" src={recipe_pic?.second} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title>{recipe_pic?.recipe_pic_name1}</Card.Title>
+        
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
+   
     </Card>
           </Col>
          
@@ -137,23 +116,12 @@ const Category = () => {
         <Row>
           <Col lg={4}>
           <Card style={{ width: '25rem' }}>
-      <Card.Img variant="top" src= />
+      <Card.Img variant="top" src={recipe_pic?.third} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title>{recipe_pic?.recipe_pic_name2}</Card.Title>
+        
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
+   
     </Card>
           </Col>
         </Row>
