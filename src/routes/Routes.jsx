@@ -1,3 +1,4 @@
+import Blog from "../Page/Blog/Blog";
 import CardRecipe from "../Page/Shared/CardRecipe/CardRecipe";
 import Category from "../Page/Category/Category";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/footer",
         element: <Footer></Footer>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
       },
     
     ],
