@@ -1,5 +1,4 @@
 import "./Login.css";
-import Category from "../../Category/Category";
 import React, { useContext, useRef, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -173,7 +172,7 @@ const Login = () => {
 
                 
       </Form>
-      <Category></Category>
+     
     </Container>
   );
 };

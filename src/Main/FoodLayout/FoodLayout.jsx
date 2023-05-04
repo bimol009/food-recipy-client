@@ -1,4 +1,3 @@
-import Category from "../../Page/Category/Category";
 import Footer from "../Footer/Footer";
 import Header from "../../Page/Shared/Header/Header";
 import React from "react";
@@ -15,7 +14,7 @@ const FoodLayout = () => {
           <Row>
             <Col lg={12}>
            
-              <Category></Category>
+             <Outlet></Outlet>
             </Col>
           </Row>
         </div>

@@ -1,8 +1,8 @@
 import "./Category.css";
 import BannerCategory from "../../Main/Banner/BannerCategory";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, Col, ListGroup, Row } from "react-bootstrap";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Category = () => {
   const { id } = useParams();
