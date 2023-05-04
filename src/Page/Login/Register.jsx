@@ -15,6 +15,8 @@ const Register = () => {
     googleSignEmailPass,
     gitHubProviderEmailPass,
     user,
+    createdProfile,
+    setReload
   } = useContext(AuthContext);
   const emailRef = useRef("");
 
@@ -30,6 +32,10 @@ const Register = () => {
     createUserEmailPass(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        createdProfile(name,photo)
+        .then(()=>{
+          setReload(true)
+        })
         if (!loggedUser.emailVerified) {
           alert("Please give a Verified Email");
         }
@@ -42,6 +48,9 @@ const Register = () => {
       })
       .catch((error) => console.log(error));
   };
+
+
+
 
   const acceptHandle = (e) => {
     setAccepted(e.target.checked);
@@ -65,7 +74,7 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from, { replace: true });
+        Navigate(from, { replace: true });
       })
 
       .catch((error) => {

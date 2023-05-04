@@ -12,6 +12,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 export const AuthContext = createContext(null);
@@ -23,6 +24,7 @@ const githubProvider = new GithubAuthProvider;
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [reload,setReload] = useState(false)
 
   const createUserEmailPass = (email, password) => {
     setLoading(true);
@@ -58,6 +60,14 @@ const gitHubProviderEmailPass = ()=>{
     return signOut(auth)
   }
 
+  const createdProfile = (name,photo)=>{
+    setReload(true)
+    return updateProfile(auth.currentUser,{
+      displayName:name,
+      photoURL:photo
+    });
+  }
+
 //   observe user state
 
 useEffect(()=>{
@@ -69,7 +79,7 @@ useEffect(()=>{
     return()=>{
         unsubsCribe();
     }
-},[])
+},[reload])
 
   const authInfo = {
     user,
@@ -80,7 +90,9 @@ useEffect(()=>{
     signIn,
     logOutEmail,
     googleSignEmailPass,
-    gitHubProviderEmailPass
+    gitHubProviderEmailPass,
+    createdProfile,
+    setReload
   };
 
   return (

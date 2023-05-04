@@ -1,3 +1,4 @@
+import Footer from "../../../Main/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import React from "react";
 import { Outlet } from "react-router-dom";
@@ -7,7 +8,8 @@ const LoginLayout = () => {
         <div>
             <Header></Header>
             <Outlet></Outlet>
-            <footer></footer>
+            <Footer></Footer>
+            
             
         </div>
     );

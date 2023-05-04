@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="feature-footer-section p-5">
           <div className="feature-sec grid md:grid-cols-5 lg:grid-cols-5 gap-4">
             <div className="feature-section">
-              <h3 className="title">My Career</h3>
+              <h3 className="title">CHEF COOKING</h3>
               <p className="feature-description">
                 There are many variations of passages of Lorem Ipsum available,
                 but the majority have suffered alteration in some form, by
@@ -85,7 +85,7 @@ const Footer = () => {
         © 2023 nextPage Inc. All rights reserved.
         </div>
         <div className="py-6 text-sm text-center text-gray-400 ">
-        Powered by Mycareer
+        Powered by CHEF COOKING
         </div>
       </div>
     </footer>

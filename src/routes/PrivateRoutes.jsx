@@ -5,7 +5,11 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const PrivateRoutes = ({children}) => {
     const {user,loading} = useContext(AuthContext)
+
     const location = useLocation()
+
+    console.log(user)
+    console.log("private route working")
 
     if(loading){
         return (

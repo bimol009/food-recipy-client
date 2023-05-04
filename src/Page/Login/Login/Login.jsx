@@ -1,4 +1,5 @@
 import "./Login.css";
+import Category from "../../Category/Category";
 import React, { useContext, useRef, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -169,7 +170,10 @@ const Login = () => {
                     <p>Continue with GitHub</p>
                   </div>
                 </div>
+
+                
       </Form>
+      <Category></Category>
     </Container>
   );
 };

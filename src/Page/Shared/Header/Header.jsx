@@ -18,10 +18,10 @@ const Header = () => {
   };
 
   return (
-    <Container className="p-4">
-      <Navbar expand="lg">
+    <div className="p-4">
+      <Navbar expand="lg p-4  navbar-dark bg-dark rounded">
         <Container>
-          <Link className="fw-bold fs-1 text-white rounded p-2 bg-danger text-decoration-none" to="/">
+          <Link className="fw-bolder fs-2 text-white rounded bg-danger text-decoration-none" to="/">
             CHEF COOKING
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -30,10 +30,16 @@ const Header = () => {
               variant="tabs"
               className="mx-auto"
             >
-              <Link className="text-decoration-none text-danger fs-3 fw-bolder" to="/">
+              <Link className="text-decoration-none text-info fs-3 fw-bolder" to="/">
                 Home
               </Link>
-              <Link className="text-decoration-none text-danger fs-3 fw-bolder ms-3" to="/blog">
+              <Link className="text-decoration-none text-info fs-3 fw-bolder ms-3" to="/">
+                About
+              </Link>
+              <Link className="text-decoration-none text-info fs-3 fw-bolder ms-3" to="/">
+                Contact
+              </Link>
+              <Link className="text-decoration-none text-info fs-3 fw-bolder ms-3" to="/blog">
                 Blog
               </Link>
             </Nav>
@@ -43,22 +49,23 @@ const Header = () => {
               {user && (
                 <img className="profile-img" src={user.photoURL} alt="" />
               )}
-              {user && <p>{user.email}</p>}
+              {user && <p className="text-white">{user.email}</p>}
 
               {user ? (
-                <Button className="fs-3 fw-bold" onClick={handleLogOut} variant="dark">
+                <Button className="fs-3 fw-bold" onClick={handleLogOut} variant="warning">
                   LogOut
                 </Button>
               ) : (
                 <Link to="/login">
-                  <Button className="fs-3 fw-bold" variant="dark">Login</Button>
+                  <Button className="fs-3 fw-bold" variant="warning">Login</Button>
                 </Link>
               )}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </Container>
+      
+    </div>
   );
 };
 

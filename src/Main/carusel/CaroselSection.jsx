@@ -1,8 +1,4 @@
 import React from "react";
-import banner1 from "../../../public/carusel-img/jpgtopngconverter-com.jpg";
-import banner2 from "../../../public/carusel-img/jpgtopngconverter-com.png";
-import banner3 from "../../../public/carusel-img/jpgtopngconverter-com (1).jpg";
-import banner4 from "../../../public/carusel-img/jpgtopngconverter-com (2).jpg";
 import { Carousel } from "react-bootstrap";
 
 const CaroselSection = () => {
