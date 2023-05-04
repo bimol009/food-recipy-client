@@ -97,7 +97,7 @@ const Header = () => {
               {user && (
                 <img className="profile-img" src={user.photoURL} alt="" />
               )}
-              {user && <p className="text-white">{user.email}</p>}
+              {user && <p className="text-white">{user.displayName}</p>}
 
               {user ? (
                 <Button

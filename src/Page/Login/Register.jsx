@@ -23,11 +23,18 @@ const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
+    setError("");
+    setSuccess("");
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
     const name = form.name.value;
     console.log(email, password, name, photo);
+
+   if (password.length < 6) {
+    setError("Please Provide at least 6 ");
+    return;
+  }
 
     createUserEmailPass(email, password)
       .then((result) => {
