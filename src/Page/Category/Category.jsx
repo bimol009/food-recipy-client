@@ -1,5 +1,7 @@
+import "@smastrom/react-rating/style.css";
 import "./Category.css";
 import BannerCategory from "../../Main/Banner/BannerCategory";
+import { Rating } from "@smastrom/react-rating";
 import { useEffect, useState } from "react";
 import { Card, Col, ListGroup, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
@@ -8,8 +10,7 @@ const Category = () => {
   const { id } = useParams();
 
   // console.log(id);
-  console.log("hello ")
-
+  console.log("hello ");
 
   // const categoryRecipesLoad = useLoaderData()
   // console.log(categoryRecipesLoad)
@@ -19,7 +20,7 @@ const Category = () => {
   useEffect(() => {
     fetch(`https://food-recipe-server-bimol009.vercel.app/categories/${id}`)
       .then((res) => res.json())
-      // .then((data) => console.log(data))
+    //   .then((data) => console.log(data))
       .then((data) => setCategories(data))
 
       .catch((error) => console.log(error));
@@ -33,7 +34,8 @@ const Category = () => {
     experience,
     likes,
     details,
-    recipe_pic
+    recipe_pic,
+    rating
   } = categories;
 
   console.log(categories);
@@ -51,7 +53,7 @@ const Category = () => {
             {chef_name}
           </Card.Title>
           <Card.Text>
-            <p className="fs-4 text-danger">{details}</p>
+            <p className="fs-4 text-danger text-show">{details}</p>
           </Card.Text>
           <ListGroup className="text-white">
             <h5 className="fw-bold fs-2 text-danger">
@@ -66,63 +68,51 @@ const Category = () => {
             <h5 className="fw-bold fs-2 text-danger">Likes : {likes}</h5>
           </ListGroup>
           <Card.Text>Last updated 3 mins ago</Card.Text>
-          
         </Card.ImgOverlay>
 
         <Card.Footer className="text-muted">
           <div className="d-flex icon-sec align-items-center">
-            {/* <Rating
+            <Rating
               style={{ maxWidth: 90 }}
-            //   value={Math.round(rating?.number || 0)}
+              value={Math.round(rating?.number || 0)}
               readOnly
-            /> */}
+            />
             <div className="flex-grow-1 ms-1">
-              {/* <span>{rating?.number}</span> */}
-              he
+              <span>{rating?.number}</span> 
+             
             </div>
-            <div>{/* <FaEye></FaEye> {total_view} */}</div>
+        
           </div>
         </Card.Footer>
       </Card>
 
       <div className="display">
-        
-      <Row>
-          <Col lg={4}>
-          <Card style={{ width: '25rem' }}>
-      <Card.Img variant="top" src={recipe_pic?.first}/>
-      <Card.Body>
-        <Card.Title>{recipe_pic?.recipe_pic_name}</Card.Title>
-        
-      </Card.Body>
-   
-    </Card>
-          </Col>
-         
-        </Row>
         <Row>
           <Col lg={4}>
-          <Card style={{ width: '25rem' }}>
-      <Card.Img variant="top" src={recipe_pic?.second} />
-      <Card.Body>
-        <Card.Title>{recipe_pic?.recipe_pic_name1}</Card.Title>
-        
-      </Card.Body>
-   
-    </Card>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant="top" src={recipe_pic?.first} />
+              <Card.Body>
+                <Card.Title>{recipe_pic?.recipe_pic_name}</Card.Title>
+              </Card.Body>
+            </Card>
           </Col>
-         
-        </Row>
-        <Row>
+
           <Col lg={4}>
-          <Card style={{ width: '25rem' }}>
-      <Card.Img variant="top" src={recipe_pic?.third} />
-      <Card.Body>
-        <Card.Title>{recipe_pic?.recipe_pic_name2}</Card.Title>
-        
-      </Card.Body>
-   
-    </Card>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant="top" src={recipe_pic?.second} />
+              <Card.Body>
+                <Card.Title>{recipe_pic?.recipe_pic_name1}</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col lg={4}>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant="top" src={recipe_pic?.third} />
+              <Card.Body>
+                <Card.Title>{recipe_pic?.recipe_pic_name2}</Card.Title>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </div>

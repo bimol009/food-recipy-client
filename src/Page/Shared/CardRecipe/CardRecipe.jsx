@@ -15,7 +15,15 @@ const CardRecipe = () => {
 
   return (
     <div>
-      <h2 className="text-center p-5 fw-bold">All Loader {categories.length}</h2>
+      <h2 className="text-center pt-5 fw-bold text-warning">
+        {" "}
+        Different Chefs in all country
+      </h2>
+      <p className="text-center text-warning fs-4 pb-5">
+        {" "}
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
       <Container className="separate gap-5">
         {categories.map((m) => (
           <CardLoad key={m.id} m={m}></CardLoad>

@@ -6,6 +6,15 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const BannerSection = () => {
   return (
     <div className="background mt-5">
+      <h2 className="text-center pt-5 fw-bold text-warning">
+        {" "}
+        Choose any chefs
+      </h2>
+      <p className="text-center text-warning fs-4 pb-5">
+        {" "}
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
       <Container>
         <Row>
           <Col className="d-flex align-items-center" lg={6}>
