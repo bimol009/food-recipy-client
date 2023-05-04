@@ -17,7 +17,7 @@ const Category = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/categories/${id}`)
+    fetch(`https://food-recipe-server-bimol009.vercel.app/categories/${id}`)
       .then((res) => res.json())
       // .then((data) => console.log(data))
       .then((data) => setCategories(data))

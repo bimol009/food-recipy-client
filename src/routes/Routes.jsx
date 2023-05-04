@@ -63,7 +63,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(`https://food-recipe-server-bimol009.vercel.app/${params.id}`),
       },
     ],
   },
