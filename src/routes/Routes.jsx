@@ -1,4 +1,5 @@
 import Category from "../Page/Category/Category";
+import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import FoodLayout from "../Main/FoodLayout/FoodLayout";
 import Footer from "../Main/Footer/Footer";
 import Login from "../Page/Login/Login/Login";
@@ -14,9 +15,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <Main></Main>,
     // loader: () => fetch(`http://localhost:5000/categories/1`),
+    errorElement: <ErrorPage></ErrorPage>
   },
-
-
 
   {
     path: "/",
@@ -38,11 +38,10 @@ const router = createBrowserRouter([
         path: "/footer",
         element: <Footer></Footer>,
       },
- 
+    
     ],
   },
 
- 
   {
     path: "/",
     // element: <Main></Main>,
@@ -50,16 +49,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/category/:id",
-        element: 
+        element: (
           <PrivateRoutes>
             <Category></Category>
-          </PrivateRoutes>,
-        
+          </PrivateRoutes>
+        ),
+
         loader: ({ params }) =>
           fetch(`https://food-recipe-server-bimol009.vercel.app/${params.id}`),
       },
     ],
   },
+ 
   // {
   //   path: "*",
   //   element: <PrivateRoutes><ErrorPage></ErrorPage></PrivateRoutes>,
