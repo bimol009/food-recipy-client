@@ -108,7 +108,11 @@ const Category = () => {
             <Card >
               <Card.Img variant="top" src={recipe_pic?.first} />
               <Card.Body>
-                <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name}</Card.Title>
+                <Card.Title className="text-center fw-bold fs-2"><h2 className="bg-info rounded">{recipe_pic?.recipe_pic_name}</h2></Card.Title>
+                <h3 className="fw-bold fs-2 text-danger">Ingredients:</h3>
+                {
+                  recipe_pic?.ingredients?.map(ig=><li className="fs-4 ms-4 fw-bolder">{ig}</li>)
+                }
               </Card.Body>
               <button onClick={handleFav} className="text-danger p-3 fs-4 fw-bolder bg-info"disabled={favorite}>ADD TO FAVORITE</button>
               <ToastContainer></ToastContainer>
@@ -119,8 +123,11 @@ const Category = () => {
             <Card >
               <Card.Img variant="top" src={recipe_pic?.second} />
               <Card.Body>
-                <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name1}</Card.Title>
-               
+                <Card.Title className="text-center fw-bold fs-2"><h2 className="bg-info rounded">{recipe_pic?.recipe_pic_name}</h2></Card.Title>
+                <h3 className="fw-bold fs-2 text-danger">Ingredients:</h3>
+                {
+                  recipe_pic?.ingredients?.map(ig=><li className="fs-4 ms-4 fw-bolder">{ig}</li>)
+                }
               </Card.Body>
               <button onClick={handleFav} className="text-danger p-3 fs-4 fw-bolder bg-info" disabled={favorite}>ADD TO FAVORITE</button>
             </Card>
@@ -130,7 +137,11 @@ const Category = () => {
             <Card >
               <Card.Img variant="top" src={recipe_pic?.third} />
               <Card.Body>
-                <Card.Title className="text-center fw-bold fs-2">{recipe_pic?.recipe_pic_name2}</Card.Title>
+                <Card.Title className="text-center fw-bold fs-2"><h2 className="bg-info rounded">{recipe_pic?.recipe_pic_name}</h2></Card.Title>
+                <h3 className="fw-bold fs-2 text-danger">Ingredients:</h3>
+                {
+                  recipe_pic?.ingredients?.map(ig=><li className="fs-4 ms-4 fw-bolder">{ig}</li>)
+                }
               </Card.Body>
               <button onClick={handleFav} className="text-danger p-3 fs-4 fw-bolder bg-info"disabled={favorite}>ADD TO FAVORITE</button>
             </Card>
