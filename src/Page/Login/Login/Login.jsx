@@ -9,7 +9,8 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const { forgotPass, signIn, googleSignEmailPass,gitHubProviderEmailPass } = useContext(AuthContext);
+  const { forgotPass, signIn, googleSignEmailPass, gitHubProviderEmailPass } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const emailRef = useRef();
@@ -54,7 +55,7 @@ const Login = () => {
       .then(() => {
         alert("please recheck");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error));
   };
 
   const googleSign = () => {
@@ -63,13 +64,14 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         navigate(from, { replace: true });
+        setSuccess("SuccessFully Logged in");
       })
 
       .catch((error) => {
-        console.log(error);
+        setError(error);
       });
 
-    setSuccess("SuccessFully Logged in");
+    
   };
   const githubSign = () => {
     gitHubProviderEmailPass()
@@ -77,13 +79,14 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         navigate(from, { replace: true });
+        setSuccess("SuccessFully Logged in");
       })
 
       .catch((error) => {
-        console.log(error);
+        setError(error);
       });
 
-    setSuccess("SuccessFully Logged in");
+   
   };
 
   return (
@@ -145,7 +148,6 @@ const Login = () => {
           </Link>
         </h5>
 
-
         <div onClick={googleSign} className="btn-control mt-5">
           <div className="display">
             <img
@@ -159,20 +161,17 @@ const Login = () => {
         </div>
 
         <div onClick={githubSign} className="btn-control mt-5">
-                  <div className="display">
-                    <img
-                      className="google-img"
-                      src="https://i.ibb.co/TWkR133/download-1-removebg-preview.png"
-                      alt=""
-                    />
+          <div className="display">
+            <img
+              className="google-img"
+              src="https://i.ibb.co/TWkR133/download-1-removebg-preview.png"
+              alt=""
+            />
 
-                    <p>Continue with GitHub</p>
-                  </div>
-                </div>
-
-                
+            <p>Continue with GitHub</p>
+          </div>
+        </div>
       </Form>
-     
     </Container>
   );
 };

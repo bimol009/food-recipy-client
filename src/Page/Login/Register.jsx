@@ -16,7 +16,7 @@ const Register = () => {
     gitHubProviderEmailPass,
     user,
     createdProfile,
-    setReload
+    setReload,
   } = useContext(AuthContext);
   const emailRef = useRef("");
 
@@ -31,18 +31,19 @@ const Register = () => {
     const name = form.name.value;
     console.log(email, password, name, photo);
 
-   if (password.length < 6) {
-    setError("Please Provide at least 6 ");
-    return;
-  }
+    if (password.length < 6) {
+      setError("Please Provide at least 6 ");
+      return;
+    }
 
     createUserEmailPass(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        createdProfile(name,photo)
-        .then(()=>{
-          setReload(true)
-        })
+        loggedUser.displayName = name;
+        loggedUser.photoURL = photo;
+        createdProfile(name, photo).then(() => {
+          setReload(true);
+        });
         if (!loggedUser.emailVerified) {
           alert("Please give a Verified Email");
         }
@@ -53,11 +54,11 @@ const Register = () => {
           alert("Please Verify Your Gmail");
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error));
+     
   };
 
-
-
+  
 
   const acceptHandle = (e) => {
     setAccepted(e.target.checked);
@@ -71,7 +72,7 @@ const Register = () => {
       })
 
       .catch((error) => {
-        console.log(error);
+        setError(error);
       });
 
     setSuccess("SuccessFully Logged in");
@@ -85,7 +86,7 @@ const Register = () => {
       })
 
       .catch((error) => {
-        console.log(error);
+        setError(error);
       });
 
     setSuccess("SuccessFully Logged in");
@@ -142,6 +143,8 @@ const Register = () => {
               <button className="btn btn-link">Show Pass</button>
             )}
           </p>
+
+    
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
@@ -164,13 +167,15 @@ const Register = () => {
         >
           Register
         </Button>
-
+        
         <h5 className="mt-4 text-center">
           ALready Have an account ?
           <Link to="/login" className="text-danger">
             Login
           </Link>
         </h5>
+
+ 
 
         <div onClick={googleSign} className="btn-control mt-5">
           <div className="display">
@@ -183,6 +188,7 @@ const Register = () => {
             <p>Continue with google</p>
           </div>
         </div>
+
 
         <div onClick={githubSign} className="btn-control mt-5">
           <div className="display">
