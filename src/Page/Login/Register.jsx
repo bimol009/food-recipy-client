@@ -69,27 +69,30 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setSuccess("SuccessFully Logged in");
       })
 
       .catch((error) => {
         setError(error);
       });
 
-    setSuccess("SuccessFully Logged in");
+    
   };
   const githubSign = () => {
     gitHubProviderEmailPass()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setSuccess("SuccessFully Logged in");
         Navigate(from, { replace: true });
+        
       })
 
       .catch((error) => {
         setError(error);
       });
 
-    setSuccess("SuccessFully Logged in");
+   
   };
 
   return (
@@ -167,7 +170,7 @@ const Register = () => {
         >
           Register
         </Button>
-        
+       
         <h5 className="mt-4 text-center">
           ALready Have an account ?
           <Link to="/login" className="text-danger">
