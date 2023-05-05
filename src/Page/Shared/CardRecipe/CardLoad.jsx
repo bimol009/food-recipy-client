@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 const CardLoad = ({ m }) => {
@@ -8,13 +9,17 @@ const CardLoad = ({ m }) => {
   return (
     <div>
       <Card >
-        <Card.Img variant="top" src={chef_picture} />
-        <img src="https://ibb.co/sCCWTDd" alt="" />
+        
+        <LazyLoadImage className="img-fluid"
+                src={chef_picture}
+                alt="Image Alt"
+              />
+       
         <Card.Body>
           <Card.Title>{chef_name}</Card.Title>
           <Card.Text>
             Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            bulk of the cards content.
           </Card.Text>
 
           <Link to={`/category/${id}`}>

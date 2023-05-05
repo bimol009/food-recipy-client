@@ -9,7 +9,7 @@ const ref = React.createRef();
 const Blog = () => {
   return (
     <div>
-      <div  className="pdf-sec text-center">
+      <div  className="pdf-sec">
         <Pdf targetRef={ref}  filename="code-example.pdf">
           {({ toPdf }) => <button className="bg-primary text-center rounded p-3" onClick={toPdf}>Download Pdf</button>}
         </Pdf>
