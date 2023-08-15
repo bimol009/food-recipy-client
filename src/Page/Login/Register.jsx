@@ -53,12 +53,13 @@ const Register = () => {
         showEmailVerification(result.user).then((result) => {
           alert("Please Verify Your Gmail");
         });
+        setSuccess("succes")
       })
-      .catch((error) => setError(error));
+      .catch((error) => setError(error.message));
      
   };
 
-  
+
 
   const acceptHandle = (e) => {
     setAccepted(e.target.checked);
@@ -106,6 +107,7 @@ const Register = () => {
             required
             placeholder="Enter name"
           />
+            <p>{error}</p>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -126,6 +128,8 @@ const Register = () => {
             placeholder="Enter photo url"
           />
         </Form.Group>
+
+        <p>{error}</p>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
@@ -162,14 +166,6 @@ const Register = () => {
           />
         </Form.Group>
 
-        <Button
-          className="w-100"
-          disabled={!accepted}
-          variant="primary"
-          type="submit"
-        >
-          Register
-        </Button>
        
         <h5 className="mt-4 text-center">
           ALready Have an account ?

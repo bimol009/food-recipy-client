@@ -9,6 +9,9 @@ import Login from "../Page/Login/Login/Login";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
+import ImgSection from "./Img-section/ImgSection";
+import SliderSection from "./SliderSection/SliderSection";
+import TestimonialSection from './../Page/Testimonial/TestimonialSection';
 
 const Main = () => {
 
@@ -33,10 +36,30 @@ const Main = () => {
           </Col>
          
         </Row>
+        
         <Row>
           <Col lg={12}>
         <CardRecipe/>
           </Col>
+        </Row>
+
+        <Row>
+          <Col lg={12}>
+        <ImgSection/>
+          </Col>
+         
+        </Row>
+        <Row>
+          <Col lg={12}>
+        <SliderSection/>
+          </Col>
+         
+        </Row>
+        <Row>
+          <Col lg={12}>
+        <TestimonialSection/>
+          </Col>
+         
         </Row>
       </div >
 

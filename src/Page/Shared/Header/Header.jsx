@@ -18,8 +18,8 @@ const Header = () => {
   };
 
   return (
-    <div className="p-4">
-      <Navbar expand="lg p-4  navbar-dark bg-dark rounded">
+    <div className="">
+      <Navbar expand="lg p-4  navbar-dark  rounded">
         <Container>
           <NavLink
             to="/"
@@ -28,7 +28,7 @@ const Header = () => {
             }
           >
             <Link
-              className="fw-bolder fs-2 text-white rounded bg-danger text-decoration-none"
+              className="fw-bolder fs-2 rounded  text-decoration-none"
               to="/"
             >
               CHEF COOKING
@@ -59,7 +59,7 @@ const Header = () => {
                 }
               >
                 <Link
-                  className="text-decoration-none text-info fs-3 fw-bolder ms-3"
+                  className="text-decoration-none text-info fs-3 fw-bolder "
                   to="/"
                 >
                   About
@@ -103,13 +103,13 @@ const Header = () => {
                 <Button
                   className="fs-3 fw-bold"
                   onClick={handleLogOut}
-                  variant="warning"
+                 
                 >
                   LogOut
                 </Button>
               ) : (
                 <Link to="/login">
-                  <Button className="fs-3 fw-bold" variant="warning">
+                  <Button className="fs-3 fw-bold" >
                     Login
                   </Button>
                 </Link>

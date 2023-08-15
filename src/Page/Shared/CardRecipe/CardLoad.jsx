@@ -16,10 +16,10 @@ const CardLoad = ({ m }) => {
               />
        
         <Card.Body>
-          <Card.Title>{chef_name}</Card.Title>
+          <Card.Title><h3 className="text-white">{chef_name}</h3> </Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the cards content.
+          <p className="text-white">  Some quick example text to build on the card title and make up the
+            bulk of the cards content.</p>
           </Card.Text>
 
           <Link to={`/category/${id}`}>

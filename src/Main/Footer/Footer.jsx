@@ -81,7 +81,7 @@ const Footer = () => {
           <hr className=" mb-5 mt-5"/>
           <footer className='px-4 divide-y  text-gray-800 relative bottom-0 left-0'>
       <div className='grid md:grid-cols-2 lg:grid-cols-2'>
-        <div className="py-6 text-sm text-center text-gray-400 ">
+        <div className="py-6 text-sm text-center text-white ">
         © 2023 nextPage Inc. All rights reserved.
         </div>
         <div className="py-6 text-sm text-center text-gray-400 ">

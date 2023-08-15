@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import './Caro.css'
 
 const CaroselSection = () => {
   return (
@@ -7,7 +8,7 @@ const CaroselSection = () => {
        <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 rounded"
           src="https://i.ibb.co/kJ0DgZ6/spicy-minced-pork-salad-with-chili-flakes-1150-28576.jpg"
           alt="First slide"
         />
