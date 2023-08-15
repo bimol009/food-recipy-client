@@ -12,6 +12,7 @@ import { useLoaderData } from "react-router-dom";
 import ImgSection from "./Img-section/ImgSection";
 import SliderSection from "./SliderSection/SliderSection";
 import TestimonialSection from './../Page/Testimonial/TestimonialSection';
+import MessageSection from "./Banner/MessageSection";
 
 const Main = () => {
 
@@ -52,6 +53,12 @@ const Main = () => {
         <Row>
           <Col lg={12}>
         <SliderSection/>
+          </Col>
+         
+        </Row>
+        <Row>
+          <Col lg={12}>
+        <MessageSection/>
           </Col>
          
         </Row>

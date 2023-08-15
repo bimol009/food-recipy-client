@@ -1,9 +1,12 @@
-.background{
+.background {
     /* background-image: url('https://i.ibb.co/fdG0xBK/papaya-salad-served-dining-table-green-papaya-salad-spicy-thai-food-plate-with-fresh-vegetables-7352.jpg'); */
-    background-image: url('https://i.ibb.co/jL1j4Pv/spicy-minced-pork-rice-black-plate-1150-23729.jpg');
+    /* background-image: url('https://i.ibb.co/jL1j4Pv/spicy-minced-pork-rice-black-plate-1150-23729.jpg'); */
+   
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/jL1j4Pv/spicy-minced-pork-rice-black-plate-1150-23729.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 h1{
     font-size: 70px;
